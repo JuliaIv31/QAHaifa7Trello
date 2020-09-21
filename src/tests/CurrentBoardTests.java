@@ -39,43 +39,52 @@ public class CurrentBoardTests extends TestBase {
     @Test
     public void CreateListPositive() throws InterruptedException {
 
+        //Printed quantity of lists before test
         System.out.println("Quantity of lists before: " + driver.findElements(By.xpath("//div[@class='list js-list-content']")).size());
         //Clicked on the add list button
         WebElement addListButton = driver.findElement(By.xpath("//span[@class='placeholder']"));
         addListButton.click();
-        Thread.sleep(5000);
-        //Added name list
+        Thread.sleep(3000);
+        //Added name new list
         WebElement nameListField = driver.findElement(By.xpath("//input[@name='name']"));
         nameListField.click();
         nameListField.clear();
         nameListField.sendKeys("test");
-        Thread.sleep(5000);
-        WebElement addList = driver.findElement(By.cssSelector("a.icon-close.dark-hover"));
+        Thread.sleep(3000);
+        //Created new List
+        WebElement addList = driver.findElement(By.xpath("//input[@class='primary mod-list-add-button js-save-edit']"));
         addList.click();
+        //Printed quantity of lists after test
         System.out.println("Quantity of lists after: " + driver.findElements(By.xpath("//div[@class='list js-list-content']")).size());
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
     @Test
     public void ArchiveListPositive() throws InterruptedException {
+        //Printed quantity of lists before test
         System.out.println("Quantity of lists before: " + driver.findElements(By.xpath("//div[@class='list js-list-content']")).size());
+        //Clicked on the add list button
         WebElement addListButton = driver.findElement(By.xpath("//span[@class='placeholder']"));
         addListButton.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
+        //Added name new list
         WebElement nameListField = driver.findElement(By.xpath("//input[@name='name']"));
         nameListField.click();
         nameListField.clear();
         nameListField.sendKeys("test1");
-        Thread.sleep(5000);
-        WebElement addList = driver.findElement(By.cssSelector("a.icon-close.dark-hover"));
+        Thread.sleep(3000);
+        //Created new List
+        WebElement addList = driver.findElement(By.xpath("//input[@class='primary mod-list-add-button js-save-edit']"));
         addList.click();
+        //Clicked on the ListMenu
         WebElement listActionMenu = driver.findElement(By.xpath("//div[@id='board']//div[2]//div[1]//div[1]//div[2]//a[1]"));
         listActionMenu.click();
-        Thread.sleep(5000);
-
+        Thread.sleep(3000);
+        //Clicked on line Archive This List
         WebElement archiveList = driver.findElement(By.xpath("//a[@class='js-close-list']"));
         archiveList.click();
+        //Printed quantity of lists after test
         System.out.println("Quantity of lists after: " + driver.findElements(By.xpath("//div[@class='list js-list-content']")).size());
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
 
