@@ -34,10 +34,12 @@ public class LoginTests extends TestBase {
     }
         @Test
         public void loginNegativeWrongPassword() throws InterruptedException{
+        //Enter login and password
         WebElement loginUser = driver.findElement(By.xpath("//input[@id='user']"));
         loginUser.click();
         loginUser.sendKeys(LOGIN);
         Thread.sleep(5000);
+        //Press loginButton
         WebElement loginButton = driver.findElement(By.id("login"));
         loginButton.click();
         Thread.sleep(5000);
@@ -46,15 +48,18 @@ public class LoginTests extends TestBase {
         passwordField.clear();
         passwordField.sendKeys("sdkfjd3");
         Thread.sleep(5000);
+        //Clicked loginSubmintButton
         WebElement loginSubmintButton = driver.findElement(By.xpath("//button[@id='login-submit']//span[@class='css-t5emrf']"));
         loginSubmintButton.click();
         Thread.sleep(10000);
+        //Print error message
         System.out.println("Error: "+driver.findElement(By.xpath("//span[contains(text(),'.')]")).getText());
         Thread.sleep(10000);
 
     }
     @Test
     public  void loginNegative() throws InterruptedException {
+        //Enter wrong login and password
         WebElement loginUser = driver.findElement(By.xpath("//input[@id='user']"));
         loginUser.click();
         loginUser.sendKeys("taro@gmail.com");
@@ -62,19 +67,23 @@ public class LoginTests extends TestBase {
         passwordField.click();
         passwordField.clear();
         passwordField.sendKeys("z8_hlk");
+        // Clicked loginButton
         WebElement loginButton = driver.findElement(By.id("login"));
         loginButton.click();
         Thread.sleep(2000);
+        //Print error message
         System.out.println("Error: "+driver.findElement(By.xpath("//div[@id='error']//p[@class='error-message']")).getText());
 
     }
     @Test
     public void loginPositive() throws InterruptedException {
+        //Enter login and password
         WebElement loginUserField = driver.findElement(By.xpath("//input[@id='user']"));
         loginUserField.click();
         loginUserField.clear();
         loginUserField.sendKeys(LOGIN);
         Thread.sleep(10000);
+        //Press loginButton
         WebElement loginButton = driver.findElement(By.id("login"));
         loginButton.click();
         Thread.sleep(10000);
@@ -83,10 +92,11 @@ public class LoginTests extends TestBase {
         passwordField.clear();
         passwordField.sendKeys(PASSWORD);
         Thread.sleep(10000);
-        //WebElement loginSubmitButton = driver.findElement(By.xpath("//button[@id='login-submit']//span[@class='css-t5emrf']"));
+        //Click loginSubmitButton
         WebElement loginSubmitButton = driver.findElement(By.id("login-submit"));
         loginSubmitButton.click();
         Thread.sleep(20000);
+        //Print name button Boards
         System.out.println("Button: " +driver.findElement(By.className("MEu8ZECLGMLeab")).getText());
         Thread.sleep(20000);
 
